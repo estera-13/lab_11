@@ -15,3 +15,26 @@ jobs:
     steps:
       - name: Print Hello World # step name, displayed on UI
         run: ... # print "Hello world!" here
+
+# on: Git commit push
+name: My Workflow on push
+
+on: push
+
+jobs:
+  ...
+
+# on: pull_request - with filtering by event_types / branches
+name: My Workflow on pull_request with filtering
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - master
+      - develop
+
+jobs:
+  ...
